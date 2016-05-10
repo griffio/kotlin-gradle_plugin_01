@@ -1,0 +1,19 @@
+plugins {
+  id "java-gradle-plugin"
+  id "groovy"
+  id "com.zoltu.kotlin" version "1.0.1-2"
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile(
+          "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}")
+
+  testCompile(
+          "org.spockframework:spock-core:1.0-groovy-2.4") {
+    exclude module: 'groovy-all'
+  }
+}
